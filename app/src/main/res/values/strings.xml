@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Tippy</string>
+    <string name="poor">Poor</string>
+    <string name="good">Good</string>
+    <string name="awesome">Awesome</string>
+    <string name="bill_amount">Bill Amount</string>
+    <string name="made_with_by_lulu">Made with ❤️ by Lulu</string>
+    <string name="base">Base</string>
+    <string name="service">Service</string>
+    <string name="total">Total</string>
+    <string name="tip">Tip</string>
+    <string name="money_symbol">$ </string>
+</resources>

@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!--  Views on the LEFT side  -->
+    <TextView
+        android:id="@+id/textViewBaseLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="48dp"
+        android:text="@string/base"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewService"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:text="@string/service"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintEnd_toEndOf="@+id/textViewBaseLabel"
+        app:layout_constraintTop_toBottomOf="@+id/textViewBaseLabel" />
+
+    <TextView
+        android:id="@+id/textViewTipPercentLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/textViewService"
+        app:layout_constraintTop_toBottomOf="@+id/textViewService"
+        tools:text="15%" />
+
+    <TextView
+        android:id="@+id/textViewTipLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="@string/tip"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintEnd_toEndOf="@+id/textViewTipPercentLabel"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTipDescription" />
+
+    <TextView
+        android:id="@+id/textViewTotalLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:text="@string/total"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintEnd_toEndOf="@+id/textViewTipLabel"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTipLabel" />
+
+
+    <!--  Views on the RIGHT side  -->
+    <TextView
+        android:id="@+id/textViewMoneySymbol"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:text="@string/money_symbol"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewBaseLabel"
+        app:layout_constraintStart_toEndOf="@+id/textViewBaseLabel"
+        app:layout_constraintTop_toTopOf="@+id/textViewBaseLabel" />
+
+    <EditText
+        android:id="@+id/editTextBaseAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="8"
+        android:hint="@string/bill_amount"
+        android:importantForAutofill="no"
+        android:inputType="numberDecimal"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewBaseLabel"
+        app:layout_constraintStart_toEndOf="@+id/textViewMoneySymbol"
+        app:layout_constraintTop_toTopOf="@+id/textViewBaseLabel" />
+
+    <Button
+        android:id="@+id/buttonPoor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:text="@string/poor"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewService"
+        app:layout_constraintStart_toStartOf="@+id/textViewMoneySymbol"
+        app:layout_constraintTop_toTopOf="@+id/textViewService" />
+
+    <Button
+        android:id="@+id/buttonGood"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="8dp"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:text="@string/good"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewService"
+        app:layout_constraintEnd_toStartOf="@+id/buttonAwesome"
+        app:layout_constraintStart_toEndOf="@+id/buttonPoor"
+        app:layout_constraintTop_toTopOf="@+id/textViewService" />
+
+    <Button
+        android:id="@+id/buttonAwesome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:text="@string/awesome"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewService"
+        app:layout_constraintStart_toEndOf="@+id/buttonGood"
+        app:layout_constraintTop_toTopOf="@+id/textViewService" />
+
+    <SeekBar
+        android:id="@+id/seekBarTip"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:max="30"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewTipPercentLabel"
+        app:layout_constraintStart_toStartOf="@+id/buttonPoor"
+        app:layout_constraintTop_toTopOf="@+id/textViewTipPercentLabel"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <TextView
+        android:id="@+id/textViewTipDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/seekBarTip"
+        app:layout_constraintStart_toStartOf="@+id/seekBarTip"
+        app:layout_constraintTop_toBottomOf="@+id/seekBarTip"
+        tools:text="Good" />
+
+    <TextView
+        android:id="@+id/textViewTipAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewTipLabel"
+        app:layout_constraintStart_toStartOf="@+id/seekBarTip"
+        app:layout_constraintTop_toTopOf="@+id/textViewTipLabel"
+        tools:text="$ 15.00" />
+
+    <TextView
+        android:id="@+id/textViewTotalAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewTotalLabel"
+        app:layout_constraintStart_toStartOf="@+id/textViewTipAmount"
+        app:layout_constraintTop_toTopOf="@+id/textViewTotalLabel"
+        tools:text="$ 115.00" />
+
+    <TextView
+        android:id="@+id/textViewFooter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:fontFamily="sans-serif-condensed-light"
+        android:text="@string/made_with_by_lulu"
+        android:textAllCaps="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
